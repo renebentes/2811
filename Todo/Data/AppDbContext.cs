@@ -8,6 +8,6 @@ namespace Todo.Data
         public DbSet<TodoModel> Todos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlite("DataSource=TodoApp.db;Cache=Shared");
+            => optionsBuilder.UseSqlite("DataSource=Data/TodoApp.db;Cache=Shared");
     }
 }
