@@ -20,8 +20,9 @@ Há links específicos para cada commit de finalização de uma aula.
 
 ### Lista de Aulas
 
-| Aulas | Descrição |
-| ----- | --------- |
+| Aulas                            | Descrição                |
+| -------------------------------- | ------------------------ |
+| [aula-2-2](../../commit/a7ad88d) | MVC: Iniciando o projeto |
 
 ## Autor
 
