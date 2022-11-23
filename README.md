@@ -22,7 +22,7 @@ Há links específicos para cada commit de finalização de uma aula.
 
 | Aulas                            | Descrição                |
 | -------------------------------- | ------------------------ |
-| [aula-2-2](../../commit/a7ad88d) | MVC: Iniciando o projeto |
+| [aula-2-1](../../commit/a7ad88d) | MVC: Iniciando o projeto |
 | [aula-2-2](../../commit/6b72655) | MVC: Configgurando o EF  |
 
 ## Autor
