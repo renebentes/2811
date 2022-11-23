@@ -1,6 +1,6 @@
 namespace Todo.Models;
 
-public class Todo
+public class TodoModel
 {
     public DateTime CreatedAt { get; set; }
 
