@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Todo.Data;
+using Todo.Models;
 
 namespace Todo.Controllers;
 
@@ -6,6 +8,6 @@ namespace Todo.Controllers;
 public class HomeController : ControllerBase
 {
     [HttpGet("/")]
-    public string Get()
-        => "Hello World!";
+    public IEnumerable<TodoModel> Get([FromServices] AppDbContext context)
+        => context.Todos.ToList();
 }
