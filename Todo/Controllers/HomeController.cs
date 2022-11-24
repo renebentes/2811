@@ -10,4 +10,13 @@ public class HomeController : ControllerBase
     [HttpGet("/")]
     public IEnumerable<TodoModel> Get([FromServices] AppDbContext context)
         => context.Todos.ToList();
+
+    [HttpPost("/")]
+    public TodoModel Post([FromBody] TodoModel todo, [FromServices] AppDbContext context)
+    {
+        context.Todos.Add(todo);
+        context.SaveChanges();
+
+        return todo;
+    }
 }
