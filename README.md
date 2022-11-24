@@ -20,15 +20,16 @@ Há links específicos para cada commit de finalização de uma aula.
 
 ### Lista de Aulas
 
-| Aulas                            | Descrição                              |
-| -------------------------------- | -------------------------------------- |
-| [aula-2-1](../../commit/a7ad88d) | MVC: Iniciando o projeto               |
-| [aula-2-2](../../commit/6b72655) | MVC: Configgurando o EF                |
-| [aula-2-3](../../commit/cea25a3) | MVC: Gerando o banco de dados          |
-| [aula-2-6](../../commit/4e31851) | MVC: Rotas e Controllers               |
-| [aula-2-7](../../commit/66989ca) | MVC: Adicionando suporte a Controllers |
-| [aula-2-8](../../commit/a1dd497) | MVC: Lendo itens do banco de dados     |
-| [aula-2-9](../../commit/b04ec80) | MVC: Criando um registro               |
+| Aulas                             | Descrição                                |
+| --------------------------------- | ---------------------------------------- |
+| [aula-2-1](../../commit/a7ad88d)  | MVC: Iniciando o projeto                 |
+| [aula-2-2](../../commit/6b72655)  | MVC: Configgurando o EF                  |
+| [aula-2-3](../../commit/cea25a3)  | MVC: Gerando o banco de dados            |
+| [aula-2-6](../../commit/4e31851)  | MVC: Rotas e Controllers                 |
+| [aula-2-7](../../commit/66989ca)  | MVC: Adicionando suporte a Controllers   |
+| [aula-2-8](../../commit/a1dd497)  | MVC: Lendo itens do banco de dados       |
+| [aula-2-9](../../commit/b04ec80)  | MVC: Criando um registro                 |
+| [aula-2-10](../../commit/c9a91f3) | MVC: Atualizando e excluindo um registro |
 
 ## Autor
 
