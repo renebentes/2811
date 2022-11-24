@@ -27,6 +27,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-2-3](../../commit/cea25a3) | MVC: Gerando o banco de dados          |
 | [aula-2-6](../../commit/4e31851) | MVC: Rotas e Controllers               |
 | [aula-2-7](../../commit/66989ca) | MVC: Adicionando suporte a Controllers |
+| [aula-2-8](../../commit/a1dd497) | MVC: Lendo itens do banco de dados     |
 
 ## Autor
 
