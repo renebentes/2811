@@ -14,7 +14,7 @@ public class HomeController : ControllerBase
 
         if (todo == null)
         {
-            NotFound();
+            return NotFound();
         }
 
         context.Todos.Remove(todo);
@@ -34,7 +34,7 @@ public class HomeController : ControllerBase
 
         if (todo == null)
         {
-            NotFound();
+            return NotFound();
         }
 
         return Ok(todo);
