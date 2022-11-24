@@ -30,6 +30,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-2-8](../../commit/a1dd497)  | MVC: Lendo itens do banco de dados       |
 | [aula-2-9](../../commit/b04ec80)  | MVC: Criando um registro                 |
 | [aula-2-10](../../commit/c9a91f3) | MVC: Atualizando e excluindo um registro |
+| [aula-2-12](../../commit/3e32e0a) | MVC: Melhorando a API                    |
 
 ## Autor
 
