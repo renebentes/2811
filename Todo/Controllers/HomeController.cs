@@ -8,41 +8,55 @@ namespace Todo.Controllers;
 public class HomeController : ControllerBase
 {
     [HttpDelete("/{id:int}")]
-    public TodoModel Delete([FromRoute] int id, [FromServices] AppDbContext context)
+    public IActionResult Delete([FromRoute] int id, [FromServices] AppDbContext context)
     {
         var todo = context.Todos.Find(id);
+
+        if (todo == null)
+        {
+            NotFound();
+        }
 
         context.Todos.Remove(todo);
         context.SaveChanges();
 
-        return todo;
+        return NoContent();
     }
 
     [HttpGet("/")]
-    public IEnumerable<TodoModel> Get([FromServices] AppDbContext context)
-        => context.Todos.ToList();
+    public IActionResult Get([FromServices] AppDbContext context)
+        => Ok(context.Todos.ToList());
 
     [HttpGet("/{id:int}")]
-    public TodoModel GetById([FromRoute] int id, [FromServices] AppDbContext context)
-        => context.Todos.FirstOrDefault(todo => todo.Id == id);
+    public IActionResult GetById([FromRoute] int id, [FromServices] AppDbContext context)
+    {
+        var todo = context.Todos.Find(id);
+
+        if (todo == null)
+        {
+            NotFound();
+        }
+
+        return Ok(todo);
+    }
 
     [HttpPost("/")]
-    public TodoModel Post([FromBody] TodoModel todo, [FromServices] AppDbContext context)
+    public IActionResult Post([FromBody] TodoModel todo, [FromServices] AppDbContext context)
     {
         context.Todos.Add(todo);
         context.SaveChanges();
 
-        return todo;
+        return CreatedAtRoute($"/{todo.Id}", todo);
     }
 
     [HttpPut("/{id:int}")]
-    public TodoModel Put([FromRoute] int id, [FromBody] TodoModel todo, [FromServices] AppDbContext context)
+    public IActionResult Put([FromRoute] int id, [FromBody] TodoModel todo, [FromServices] AppDbContext context)
     {
         var model = context.Todos.Find(id);
 
         if (model is null)
         {
-            return todo;
+            return NotFound();
         }
 
         model.Title = todo.Title;
@@ -51,6 +65,6 @@ public class HomeController : ControllerBase
         context.Todos.Update(model);
         context.SaveChanges();
 
-        return todo;
+        return NoContent();
     }
 }
