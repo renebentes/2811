@@ -475,3 +475,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# SQLite Temporary Files
+Todo/Data/TodoApp.db-shm
+Todo/Data/TodoApp.db-wal
