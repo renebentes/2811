@@ -35,6 +35,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-3-3-1](../../commit/482128c) | CRUD e Entity Framework: Adicionando suporte ao Entity Framework |
 | [aula-3-3-2](../../commit/84f91a3) | CRUD e Entity Framework: Adicionando suporte ao Entity Framework |
 | [aula-3-3-3](../../commit/d3f0a77) | CRUD e Entity Framework: Adicionando suporte ao Entity Framework |
+| [aula-3-4](../../commit/8d28719)   | CRUD e Entity Framework: Criando o banco de dados                |
 
 ## Autor
 
