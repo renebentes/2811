@@ -7,8 +7,6 @@ namespace Blog.Controllers;
 public class CategoriesController : ControllerBase
 {
     [HttpGet]
-    public IActionResult Get([FromServices] BlogDataContext context)
-    {
-        return Ok(context.Categories.ToList());
-    }
+    public async Task<IActionResult> GetAsync([FromServices] BlogDataContext context)
+        => Ok(await context.Categories.ToListAsync());
 }
