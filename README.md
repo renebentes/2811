@@ -40,6 +40,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-3-7](../../commit/ada187f)   | CRUD e Entity Framework: Versionamento                           |
 | [aula-3-8](../../commit/0def7f6)   | CRUD e Entity Framework: Async e Await                           |
 | [aula-3-9](../../commit/e7091d2)   | CRUD e Entity Framework: CRUD de Categorias                      |
+| [aula-3-13](../../commit/1d3bfc1)  | CRUD e Entity Framework: ViewModels                              |
 
 ## Autor
 
