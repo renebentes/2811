@@ -88,14 +88,20 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost()]
-    public async Task<IActionResult> PostAsync([FromBody] Category model, [FromServices] BlogDataContext context)
+    public async Task<IActionResult> PostAsync([FromBody] CreateCategoryViewModel model, [FromServices] BlogDataContext context)
     {
         try
         {
-            await context.Categories.AddAsync(model);
+            var category = new Category
+            {
+                Title = model.Title,
+                Slug = model.Slug
+            };
+
+            await context.Categories.AddAsync(category);
             await context.SaveChangesAsync();
 
-            return Created($"v1/categories/{model.Id}", model);
+            return Created($"v1/categories/{category.Id}", category);
         }
         catch (DbUpdateException e)
         {
