@@ -47,17 +47,17 @@ public class CategoriesController : ControllerBase
     {
         try
         {
-            return Ok(await context.Categories.ToListAsync());
+            return Ok(new ResultViewModel<List<Category>>(await context.Categories.ToListAsync()));
         }
         catch (DbException e)
         {
             _logger.LogCritical(message: e.ToString());
-            return StatusCode(500, "Houve um erro de banco de dados ao obter uma categoria");
+            return StatusCode(500, new ResultViewModel<List<Category>>("Houve um erro de banco de dados ao obter uma categoria"));
         }
         catch (Exception e)
         {
             _logger.LogError(message: e.ToString());
-            return StatusCode(500, "Um erro ocorreu ao obter uma categoria");
+            return StatusCode(500, new ResultViewModel<List<Category>>("Um erro ocorreu ao obter uma categoria"));
         }
     }
 
@@ -73,17 +73,17 @@ public class CategoriesController : ControllerBase
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(new ResultViewModel<Category>(category));
         }
         catch (DbException e)
         {
             _logger.LogCritical(message: e.ToString());
-            return StatusCode(500, "Houve um erro de banco de dados ao obter uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Houve um erro de banco de dados ao obter uma categoria"));
         }
         catch (Exception e)
         {
             _logger.LogError(message: e.ToString());
-            return StatusCode(500, "Um erro ocorreu ao obter uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Um erro ocorreu ao obter uma categoria"));
         }
     }
 
@@ -101,17 +101,17 @@ public class CategoriesController : ControllerBase
             await context.Categories.AddAsync(category);
             await context.SaveChangesAsync();
 
-            return Created($"v1/categories/{category.Id}", category);
+            return Created($"v1/categories/{category.Id}", new ResultViewModel<Category>(category));
         }
         catch (DbUpdateException e)
         {
             _logger.LogCritical(message: e.ToString());
-            return StatusCode(500, "Houve um erro de banco de dados ao criar uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Houve um erro de banco de dados ao criar uma categoria"));
         }
         catch (Exception e)
         {
             _logger.LogError(message: e.ToString());
-            return StatusCode(500, "Um erro ocorreu ao criar uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Um erro ocorreu ao criar uma categoria"));
         }
     }
 
@@ -124,7 +124,7 @@ public class CategoriesController : ControllerBase
 
             if (category is null)
             {
-                return NotFound();
+                return NotFound(new ResultViewModel<Category>("Nenhuma categoria encontrada"));
             }
 
             category.Title = model.Title;
@@ -134,17 +134,17 @@ public class CategoriesController : ControllerBase
 
             await context.SaveChangesAsync();
 
-            return Ok(category);
+            return Ok(new ResultViewModel<Category>(category));
         }
         catch (DbUpdateException e)
         {
             _logger.LogCritical(message: e.ToString());
-            return StatusCode(500, "Houve um erro de banco de dados ao atualizar uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Houve um erro de banco de dados ao atualizar uma categoria"));
         }
         catch (Exception e)
         {
             _logger.LogError(message: e.ToString());
-            return StatusCode(500, "Um erro ocorreu ao atualizar uma categoria");
+            return StatusCode(500, new ResultViewModel<Category>("Um erro ocorreu ao atualizar uma categoria"));
         }
     }
 }
