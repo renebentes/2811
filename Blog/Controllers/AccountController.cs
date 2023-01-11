@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers;
@@ -11,7 +12,19 @@ public class AccountController : ControllerBase
     public AccountController(TokenService tokenService)
         => _tokenService = tokenService;
 
+    [Authorize("admin")]
+    public IActionResult GetAdmin()
+        => Ok(User?.Identity?.Name);
+
+    [Authorize("author")]
+    public IActionResult GetAuthor()
+        => Ok(User?.Identity?.Name);
+
+    [Authorize("user")]
+    public IActionResult GetUser()
+        => Ok(User?.Identity?.Name);
+
     [HttpPost("signin")]
-    public IActionResult SigIn(TokenService tokenService)
-        => Ok(tokenService.GenerateToken(null));
+    public IActionResult SignIn()
+        => Ok(_tokenService.GenerateToken(null));
 }
