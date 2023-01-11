@@ -5,13 +5,8 @@ namespace Blog.Controllers;
 
 [Route("api/v1/[controller]")]
 [ApiController]
-public class AccountController : ControllerBase
+public class AccountsController : ControllerBase
 {
-    private readonly TokenService _tokenService;
-
-    public AccountController(TokenService tokenService)
-        => _tokenService = tokenService;
-
     [Authorize("admin")]
     public IActionResult GetAdmin()
         => Ok(User?.Identity?.Name);
@@ -25,6 +20,6 @@ public class AccountController : ControllerBase
         => Ok(User?.Identity?.Name);
 
     [HttpPost("signin")]
-    public IActionResult SignIn()
-        => Ok(_tokenService.GenerateToken(null));
+    public IActionResult SignIn([FromServices] TokenService tokenService)
+        => Ok(tokenService.GenerateToken(null));
 }
