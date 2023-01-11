@@ -16,7 +16,7 @@ public class TokenService
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
 
-        SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
+        var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }
 }
