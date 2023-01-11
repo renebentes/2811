@@ -45,6 +45,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-3-15](../../commit/2e92555)         | CRUD e Entity Framework: Validações                              |
 | [aula-4-2](../../commit/24e55ad)          | Autenticação e Autorização: Token e JWT                          |
 | [aula-4-3/aula-4-4](../../commit/a6ebf00) | Autenticação e Autorização: Token Service/Gerando Token          |
+| [aula-4-5](../../commit/5d16da4)          | Autenticação e Autorização: Injeção de Dependência               |
 
 ## Autor
 
