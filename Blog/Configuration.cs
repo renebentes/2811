@@ -1,4 +1,4 @@
-﻿namespace Blog;
+namespace Blog;
 
 public static class Configuration
 {
