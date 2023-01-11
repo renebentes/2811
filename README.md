@@ -46,6 +46,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-4-2](../../commit/24e55ad)          | Autenticação e Autorização: Token e JWT                          |
 | [aula-4-3/aula-4-4](../../commit/a6ebf00) | Autenticação e Autorização: Token Service/Gerando Token          |
 | [aula-4-5](../../commit/5d16da4)          | Autenticação e Autorização: Injeção de Dependência               |
+| [aula-4-8](../../commit/6beb9d5)          | Autenticação e Autorização: JWT Claims                           |
 
 ## Autor
 
