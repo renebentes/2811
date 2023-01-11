@@ -43,6 +43,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-3-13](../../commit/1d3bfc1)  | CRUD e Entity Framework: ViewModels                              |
 | [aula-3-14](../../commit/1699a4a)  | CRUD e Entity Framework: EditorViewModel                         |
 | [aula-3-15](../../commit/2e92555)  | CRUD e Entity Framework: Validações                              |
+| [aula-4-2](../../commit/24e55ad)   | Autenticação e Autorização: Token e JWT                          |
 
 ## Autor
 
