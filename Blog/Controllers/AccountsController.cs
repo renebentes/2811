@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SecureIdentity.Password;
 
 namespace Blog.Controllers;
 
@@ -27,6 +28,9 @@ public class AccountsController : ControllerBase
                 Email = model.Email,
                 Slug = model.Email.Replace("@", "-").Replace(".", "-")
             };
+
+            var password = PasswordGenerator.Generate();
+            user.PasswordHash = PasswordHasher.Hash(password);
 
             await blogDataContext.Users.AddAsync(user);
             await blogDataContext.SaveChangesAsync();
