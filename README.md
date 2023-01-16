@@ -49,6 +49,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-4-8](../../commit/6beb9d5)          | Autenticação e Autorização: JWT Claims                              |
 | [aula-4-9](../../commit/d3c2ddc)          | Autenticação e Autorização: Configurando Autenticação e Autorização |
 | [aula-4-11](../../commit/d709d79)         | Autenticação e Autorização: Iniciando o cadastro e usuários         |
+| [aula-4-13](../../commit/22ef0c2)         | Autenticação e Autorização: Registrando um novo usuário             |
 
 ## Autor
 
