@@ -62,8 +62,8 @@ public class AccountsController : ControllerBase
             var password = PasswordGenerator.Generate();
             user.PasswordHash = PasswordHasher.Hash(password);
 
-            await blogDataContext.Users.AddAsync(user);
-            await blogDataContext.SaveChangesAsync();
+            _ = await blogDataContext.Users.AddAsync(user);
+            _ = await blogDataContext.SaveChangesAsync();
 
             return Created($"api/v1/accounts/{user.Id}", user);
         }
