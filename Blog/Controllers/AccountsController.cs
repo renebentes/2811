@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SecureIdentity.Password;
 
@@ -9,8 +8,39 @@ namespace Blog.Controllers;
 public class AccountsController : ControllerBase
 {
     [HttpPost("signin")]
-    public IActionResult SignIn([FromServices] TokenService tokenService)
-        => Ok(tokenService.GenerateToken(null));
+    public async Task<IActionResult> SignInAsync([FromBody] LoginViewModel model,
+                                            [FromServices] BlogDataContext context,
+                                            [FromServices] TokenService tokenService)
+    {
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
+            }
+
+            var user = await context.Users.FirstOrDefaultAsync(user => user.Email == model.Email);
+
+            if (user is null)
+            {
+                return StatusCode(401, new ResultViewModel<string>("Usuário ou senha inválidos!"));
+            }
+
+            if (!PasswordHasher.Verify(user.PasswordHash, model.Password))
+            {
+                return StatusCode(401, new ResultViewModel<string>("Usuário ou senha inválidos!"));
+            }
+
+            var token = tokenService.GenerateToken(user);
+
+            return Ok(new ResultViewModel<dynamic>(token, null!));
+        }
+        catch (Exception)
+        {
+            // TODO: Log exception
+            return StatusCode(500, new ResultViewModel<Category>("Erro interno do servidor ao registrar um usuário."));
+        }
+    }
 
     [HttpPost("signup")]
     public async Task<IActionResult> SignUpAsync([FromServices] BlogDataContext blogDataContext, [FromBody] RegisterUserViewModel model)
