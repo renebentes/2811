@@ -19,7 +19,11 @@ public class AccountsController : ControllerBase
                 return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
             }
 
-            var user = await context.Users.FirstOrDefaultAsync(user => user.Email == model.Email);
+            var user = await context
+                .Users
+                .AsNoTracking()
+                .Include(user => user.Roles)
+                .FirstOrDefaultAsync(user => user.Email == model.Email);
 
             if (user is null)
             {
