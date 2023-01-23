@@ -13,11 +13,7 @@ public class TokenService
         var key = Encoding.ASCII.GetBytes(Configuration.JwtKey);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new Claim[]
-            {
-                new (ClaimTypes.Name, "renebentes"),
-                new (ClaimTypes.Role, "admin")
-            }),
+            Subject = new ClaimsIdentity(user.GetClaims()),
             Expires = DateTime.UtcNow.AddHours(8),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
