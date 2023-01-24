@@ -1,4 +1,3 @@
-using Blog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -29,6 +28,13 @@ builder.Services.AddDbContext<BlogDataContext>();
 builder.Services.AddTransient<TokenService>();
 
 var app = builder.Build();
+
+Configuration.ApiKey = app.Configuration.GetValue<string>(nameof(Configuration.ApiKey));
+Configuration.ApiKeyName = app.Configuration.GetValue<string>(nameof(Configuration.ApiKeyName));
+Configuration.JwtKey = app.Configuration.GetValue<string>(nameof(Configuration.JwtKey));
+
+var smtpConfiguration = new SmtpConfiguration();
+app.Configuration.GetSection(nameof(Configuration.SmtpConfiguration)).Bind(smtpConfiguration);
 
 app.UseAuthentication();
 app.UseAuthorization();
