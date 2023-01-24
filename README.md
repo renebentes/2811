@@ -53,6 +53,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-4-14](../../commit/8db2e5b)         | Autenticação e Autorização: Autenticando                            |
 | [aula-4-15](../../commit/066f517)         | Autenticação e Autorização: Gerando tokens com Claims               |
 | [aula-4-16](../../commit/ef277f3)         | Autenticação e Autorização: Implementando um ApiKey                 |
+| [aula-5-2](../../commit/a5dec57)          | Configuração: Lendo do AppSettings                                  |
 
 ## Autor
 
