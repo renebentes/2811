@@ -52,6 +52,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-4-13](../../commit/22ef0c2)         | Autenticação e Autorização: Registrando um novo usuário             |
 | [aula-4-14](../../commit/8db2e5b)         | Autenticação e Autorização: Autenticando                            |
 | [aula-4-15](../../commit/066f517)         | Autenticação e Autorização: Gerando tokens com Claims               |
+| [aula-4-16](../../commit/ef277f3)         | Autenticação e Autorização: Implementando um ApiKey                 |
 
 ## Autor
 
