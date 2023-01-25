@@ -33,7 +33,8 @@ public static class WebApplicationBuilderExtensions
     {
         builder.Services
             .AddDbContext<BlogDataContext>()
-            .AddTransient<TokenService>();
+            .AddTransient<TokenService>()
+            .AddTransient<SmtpEmailService>();
 
         return builder;
     }
