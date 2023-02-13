@@ -45,7 +45,7 @@ public class AccountsController : ControllerBase
         catch (Exception)
         {
             // TODO: Log exception
-            return StatusCode(500, new ResultViewModel<Category>("Erro interno do servidor ao registrar um usuário."));
+            return StatusCode(500, new ResultViewModel<User>("Erro interno do servidor ao registrar um usuário."));
         }
     }
 
@@ -80,12 +80,12 @@ public class AccountsController : ControllerBase
         catch (DbUpdateException)
         {
             // TODO: Log exception
-            return StatusCode(500, new ResultViewModel<Category>("Houve um erro de banco de dados ao registrar um usuário."));
+            return StatusCode(500, new ResultViewModel<User>("Houve um erro de banco de dados ao registrar um usuário."));
         }
         catch (Exception)
         {
             // TODO: Log exception
-            return StatusCode(500, new ResultViewModel<Category>("Erro interno do servidor ao registrar um usuário."));
+            return StatusCode(500, new ResultViewModel<User>("Erro interno do servidor ao registrar um usuário."));
         }
     }
 
@@ -118,12 +118,12 @@ public class AccountsController : ControllerBase
         catch (DbUpdateException)
         {
             // TODO: Log exception
-            return StatusCode(500, new ResultViewModel<Category>("Houve um erro de banco de dados ao salvar imagem do usuário."));
+            return StatusCode(500, new ResultViewModel<User>("Houve um erro de banco de dados ao salvar imagem do usuário."));
         }
         catch (Exception)
         {
             // TODO: Log exception
-            return StatusCode(500, new ResultViewModel<Category>("Erro interno do servidor ao salvar a imagem do usuário."));
+            return StatusCode(500, new ResultViewModel<User>("Erro interno do servidor ao salvar a imagem do usuário."));
         }
 
         return Ok(new ResultViewModel<string>("Imagem alterada com sucesso!", null));
