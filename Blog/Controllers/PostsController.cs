@@ -7,6 +7,7 @@ namespace Blog.Controllers;
 [Route("api/[controller]")]
 public class PostsController : ControllerBase
 {
+    [HttpGet]
     public async Task<IActionResult> ListPosts([FromServices] BlogDataContext context,
                                                [FromQuery] int page = 0,
                                                [FromQuery] int pageSize = 25)
