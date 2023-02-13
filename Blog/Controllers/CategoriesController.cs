@@ -54,6 +54,7 @@ public class CategoriesController : ControllerBase
                 entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1);
                 return await context.Categories.ToListAsync();
             });
+
             return Ok(new ResultViewModel<List<Category>>(categories));
         }
         catch (DbException e)
