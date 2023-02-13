@@ -8,8 +8,8 @@ namespace Blog.Controllers;
 public class PostsController : ControllerBase
 {
     public async Task<IActionResult> ListPosts([FromServices] BlogDataContext context,
-                                               int page = 0,
-                                               int pageSize = 25)
+                                               [FromQuery] int page = 0,
+                                               [FromQuery] int pageSize = 25)
     {
         try
         {
