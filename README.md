@@ -55,6 +55,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-4-16](../../commit/ef277f3)         | Autenticação e Autorização: Implementando um ApiKey                 |
 | [aula-5-2](../../commit/a5dec57)          | Configuração: Lendo do AppSettings                                  |
 | [aula-5-3](../../commit/ad885b2)          | Configuração: Organizando o Program                                 |
+| [aula-5-5](../../commit/8f75b94)          | Configuração: Criando um serviço de e-mails                         |
 
 ## Autor
 
