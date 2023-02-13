@@ -51,4 +51,31 @@ public class PostsController : ControllerBase
             return StatusCode(500, new ResultViewModel<List<Post>>("Erro interno do servidor."));
         }
     }
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> ShowPost([FromServices] BlogDataContext context, [FromRoute] int id)
+    {
+        try
+        {
+            var post = await context
+                .Posts
+                .AsNoTracking()
+                .Include(p => p.Author)
+                .ThenInclude(u => u.Roles)
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (post is null)
+            {
+                return NotFound(new ResultViewModel<Post>("Conteúdo não encontrado"));
+            }
+
+            return Ok(new ResultViewModel<Post>(post));
+        }
+        catch (Exception e)
+        {
+            // TODO: Log exception
+            return StatusCode(500, new ResultViewModel<List<Post>>("Erro interno do servidor."));
+        }
+    }
 }
