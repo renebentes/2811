@@ -47,7 +47,9 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost("signup")]
-    public async Task<IActionResult> SignUpAsync([FromServices] BlogDataContext blogDataContext, [FromBody] RegisterUserViewModel model)
+    public async Task<IActionResult> SignUpAsync([FromServices] BlogDataContext blogDataContext,
+                                                 [FromBody] RegisterUserViewModel model,
+                                                 [FromServices] SmtpEmailService emailService)
     {
         try
         {
@@ -68,6 +70,7 @@ public class AccountsController : ControllerBase
 
             _ = await blogDataContext.Users.AddAsync(user);
             _ = await blogDataContext.SaveChangesAsync();
+            emailService.Send(user.Name, user.Email, "Bem-vindo ao blog", $"Sua senha é <strong>{password}</strong>");
 
             return Created($"api/v1/accounts/{user.Id}", user);
         }
