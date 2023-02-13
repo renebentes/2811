@@ -57,6 +57,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-5-3](../../commit/ad885b2)          | Configuração: Organizando o Program                                 |
 | [aula-5-5](../../commit/8f75b94)          | Configuração: Criando um serviço de e-mails                         |
 | [aula-5-7](../../commit/8f75b94)          | Configuração: Arquivos estáticos                                    |
+| [aula-5-8](../../commit/4b29b6e)          | Configuração: Upload de imagens                                     |
 
 ## Autor
 
