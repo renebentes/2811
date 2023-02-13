@@ -40,6 +40,7 @@ public class PostsController : ControllerBase
 
             return Ok(new ResultViewModel<dynamic>(new
             {
+                total,
                 page,
                 pageSize,
                 posts
