@@ -12,6 +12,7 @@ builder.Services
     });
 
 builder.Services.AddMemoryCache();
+builder.AddCompression();
 builder.AddServices();
 
 var app = builder.Build();
@@ -22,5 +23,6 @@ app.UseAuthorization();
 app.UseStaticFiles();
 
 app.MapControllers();
+app.UseResponseCompression();
 
 app.Run();
