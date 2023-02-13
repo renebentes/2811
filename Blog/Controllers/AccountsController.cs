@@ -9,8 +9,8 @@ public class AccountsController : ControllerBase
 {
     [HttpPost("signin")]
     public async Task<IActionResult> SignInAsync([FromBody] LoginViewModel model,
-                                            [FromServices] BlogDataContext context,
-                                            [FromServices] TokenService tokenService)
+                                                 [FromServices] BlogDataContext context,
+                                                 [FromServices] TokenService tokenService)
     {
         try
         {
