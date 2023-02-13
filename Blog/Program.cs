@@ -11,6 +11,7 @@ builder.Services
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
     });
 
+builder.Services.AddMemoryCache();
 builder.AddServices();
 
 var app = builder.Build();
