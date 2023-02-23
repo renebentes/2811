@@ -25,4 +25,9 @@ app.UseStaticFiles();
 app.MapControllers();
 app.UseResponseCompression();
 
+if (app.Environment.IsDevelopment())
+{
+    Console.WriteLine("Rodando em ambiente de desenvolvimento!");
+}
+
 app.Run();
