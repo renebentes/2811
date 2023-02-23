@@ -44,8 +44,9 @@ public static class WebApplicationBuilderExtensions
 
     public static WebApplicationBuilder AddServices(this WebApplicationBuilder builder)
     {
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services
-            .AddDbContext<BlogDataContext>()
+            .AddDbContext<BlogDataContext>(options => options.UseSqlServer(connectionString))
             .AddTransient<TokenService>()
             .AddTransient<SmtpEmailService>();
 
