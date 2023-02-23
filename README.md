@@ -63,6 +63,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-8-6](../../commit/6938d6d)          | Ambientes e Documentação: IsDevelopment                             |
 | [aula-8-7](../../commit/70a45a8)          | Ambientes e Documentação: Forçando HTTPS                            |
 | [aula-8-8](../../commit/7d1e405)          | Ambientes e Documentação: Connection Strings                        |
+| [aula-8-10](../../commit/6920a40)         | Ambientes e Documentação: Documentando a API                        |
 
 ## Autor
 
