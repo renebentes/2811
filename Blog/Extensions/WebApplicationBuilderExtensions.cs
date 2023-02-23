@@ -52,4 +52,13 @@ public static class WebApplicationBuilderExtensions
 
         return builder;
     }
+
+    public static WebApplicationBuilder AddSwagger(this WebApplicationBuilder builder)
+    {
+        builder.Services
+            .AddEndpointsApiExplorer()
+            .AddSwaggerGen();
+
+        return builder;
+    }
 }
