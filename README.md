@@ -61,6 +61,7 @@ Há links específicos para cada commit de finalização de uma aula.
 | [aula-6-6](../../commit/c16686c)          | Performance: Cache                                                  |
 | [aula-6-7](../../commit/02270f9)          | Performance: Compressão                                             |
 | [aula-8-6](../../commit/6938d6d)          | Ambientes e Documentação: IsDevelopment                             |
+| [aula-8-7](../../commit/70a45a8)          | Ambientes e Documentação: Forçando HTTPS                            |
 
 ## Autor
 
