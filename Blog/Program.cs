@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.LoadConfiguration();
 builder.AddJwtAuthentication();
 builder.Services
     .AddControllers()
@@ -16,7 +17,6 @@ builder.AddCompression();
 builder.AddServices();
 
 var app = builder.Build();
-app.Configuration.LoadConfiguration();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,8 +1,8 @@
 namespace Blog.Extensions;
 
-public static class IConfigurationExtensions
+public static class ConfigurationManagerExtensions
 {
-    public static void LoadConfiguration(this IConfiguration configuration)
+    public static void LoadConfiguration(this ConfigurationManager configuration)
     {
         Configuration.ApiKey = configuration.GetValue<string>(nameof(Configuration.ApiKey));
         Configuration.ApiKeyName = configuration.GetValue<string>(nameof(Configuration.ApiKeyName));
